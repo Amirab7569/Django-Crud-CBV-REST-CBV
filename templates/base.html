@@ -1,0 +1,17 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body style="background-color: {% block bg %}{% endblock bg %};">
+    {% include "inc/navbar.html" %}
+    {% include "inc/messages.html" %}
+    {% block content %}
+    
+    {% endblock content %}
+</body>
+</html>

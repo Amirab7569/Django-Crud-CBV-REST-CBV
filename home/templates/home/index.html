@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %} Posts {% endblock title %}
+{% block bg %}skyblue{% endblock bg %}
+
+{% block content %}
+    <a href="{% url "home:create" %}"><button type="button" class="btn btn-success">Create</button></a>
+    {% for post in posts %}
+        <a href="{% url "home:details" post.id %}"><h1>{{post.id}}</h1></a>
+        <hr>
+    {% endfor %}
+{% endblock content %}
