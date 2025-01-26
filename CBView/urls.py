@@ -19,5 +19,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('home.urls')),
+    # For login and logout in rest add this path ...
+    path('api-auth/', include('rest_framework.urls')),
+    path("accounts/", include("django.contrib.auth.urls")),
+    path('home/', include('home.urls')),
 ]
