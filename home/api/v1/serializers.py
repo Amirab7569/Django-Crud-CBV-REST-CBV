@@ -21,7 +21,7 @@ class PostSerializer(serializers.ModelSerializer):
         return request.build_absolute_uri(obj.pk)
 
 
-    # change 
+    # change data for show
     def to_representation(self, instance):
         request = self.context.get('request')
         rep = super().to_representation(instance)
@@ -33,6 +33,7 @@ class PostSerializer(serializers.ModelSerializer):
             rep.pop('body',None)
         return rep
     
+    # create author obj in DataBase
     def create(self, validated_data):
         validated_data['author'] = User.objects.get(pk=self.context.get('request').user.id)
         return super().create(validated_data)

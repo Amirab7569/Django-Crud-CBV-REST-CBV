@@ -22,6 +22,9 @@ from rest_framework.filters import SearchFilter, OrderingFilter
 # paginations
 from .paginations import DefaultPagination
 
+
+
+
 # Function Base View
 '''
 FBV post list
